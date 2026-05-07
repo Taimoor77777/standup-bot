@@ -40,8 +40,10 @@ export default function App() {
       setSummary(result.summary);
       // Refresh history so the new entry appears immediately
       await loadHistory();
+      return true;
     } catch (err) {
       setSubmitError(err.message);
+      return false;
     } finally {
       setLoading(false);
     }
